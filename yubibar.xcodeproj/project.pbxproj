@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCF0EE691B011292000BF8B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF0EE681B011292000BF8B8 /* AppDelegate.swift */; };
+		BCF0EE6B1B011292000BF8B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF0EE6A1B011292000BF8B8 /* Images.xcassets */; };
+		BCF0EE6E1B011292000BF8B8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF0EE6C1B011292000BF8B8 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCF0EE741B011292000BF8B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCF0EE5B1B011292000BF8B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF0EE621B011292000BF8B8;
+			remoteInfo = yubibar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BCF0EE631B011292000BF8B8 /* yubibar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yubibar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCF0EE671B011292000BF8B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCF0EE681B011292000BF8B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCF0EE6A1B011292000BF8B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BCF0EE6D1B011292000BF8B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BCF0EE731B011292000BF8B8 /* yubibarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yubibarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCF0EE601B011292000BF8B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCF0EE701B011292000BF8B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCF0EE5A1B011292000BF8B8 = {
+			isa = PBXGroup;
+			children = (
+				BCF0EE651B011292000BF8B8 /* yubibar */,
+				BCF0EE641B011292000BF8B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BCF0EE641B011292000BF8B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCF0EE631B011292000BF8B8 /* yubibar.app */,
+				BCF0EE731B011292000BF8B8 /* yubibarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCF0EE651B011292000BF8B8 /* yubibar */ = {
+			isa = PBXGroup;
+			children = (
+				BCF0EE681B011292000BF8B8 /* AppDelegate.swift */,
+				BCF0EE6A1B011292000BF8B8 /* Images.xcassets */,
+				BCF0EE6C1B011292000BF8B8 /* MainMenu.xib */,
+				BCF0EE661B011292000BF8B8 /* Supporting Files */,
+			);
+			path = yubibar;
+			sourceTree = "<group>";
+		};
+		BCF0EE661B011292000BF8B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCF0EE671B011292000BF8B8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCF0EE621B011292000BF8B8 /* yubibar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCF0EE7D1B011292000BF8B8 /* Build configuration list for PBXNativeTarget "yubibar" */;
+			buildPhases = (
+				BCF0EE5F1B011292000BF8B8 /* Sources */,
+				BCF0EE601B011292000BF8B8 /* Frameworks */,
+				BCF0EE611B011292000BF8B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = yubibar;
+			productName = yubibar;
+			productReference = BCF0EE631B011292000BF8B8 /* yubibar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCF0EE721B011292000BF8B8 /* yubibarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCF0EE801B011292000BF8B8 /* Build configuration list for PBXNativeTarget "yubibarTests" */;
+			buildPhases = (
+				BCF0EE6F1B011292000BF8B8 /* Sources */,
+				BCF0EE701B011292000BF8B8 /* Frameworks */,
+				BCF0EE711B011292000BF8B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCF0EE751B011292000BF8B8 /* PBXTargetDependency */,
+			);
+			name = yubibarTests;
+			productName = yubibarTests;
+			productReference = BCF0EE731B011292000BF8B8 /* yubibarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCF0EE5B1B011292000BF8B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "D.E. Goodman-Wilson";
+				TargetAttributes = {
+					BCF0EE621B011292000BF8B8 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					BCF0EE721B011292000BF8B8 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = BCF0EE621B011292000BF8B8;
+					};
+				};
+			};
+			buildConfigurationList = BCF0EE5E1B011292000BF8B8 /* Build configuration list for PBXProject "yubibar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCF0EE5A1B011292000BF8B8;
+			productRefGroup = BCF0EE641B011292000BF8B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCF0EE621B011292000BF8B8 /* yubibar */,
+				BCF0EE721B011292000BF8B8 /* yubibarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCF0EE611B011292000BF8B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF0EE6B1B011292000BF8B8 /* Images.xcassets in Resources */,
+				BCF0EE6E1B011292000BF8B8 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCF0EE711B011292000BF8B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCF0EE5F1B011292000BF8B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF0EE691B011292000BF8B8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCF0EE6F1B011292000BF8B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCF0EE751B011292000BF8B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCF0EE621B011292000BF8B8 /* yubibar */;
+			targetProxy = BCF0EE741B011292000BF8B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BCF0EE6C1B011292000BF8B8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCF0EE6D1B011292000BF8B8 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCF0EE7B1B011292000BF8B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BCF0EE7C1B011292000BF8B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BCF0EE7E1B011292000BF8B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = yubibar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BCF0EE7F1B011292000BF8B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = yubibar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BCF0EE811B011292000BF8B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = yubibarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yubibar.app/Contents/MacOS/yubibar";
+			};
+			name = Debug;
+		};
+		BCF0EE821B011292000BF8B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = yubibarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yubibar.app/Contents/MacOS/yubibar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCF0EE5E1B011292000BF8B8 /* Build configuration list for PBXProject "yubibar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF0EE7B1B011292000BF8B8 /* Debug */,
+				BCF0EE7C1B011292000BF8B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCF0EE7D1B011292000BF8B8 /* Build configuration list for PBXNativeTarget "yubibar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF0EE7E1B011292000BF8B8 /* Debug */,
+				BCF0EE7F1B011292000BF8B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCF0EE801B011292000BF8B8 /* Build configuration list for PBXNativeTarget "yubibarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF0EE811B011292000BF8B8 /* Debug */,
+				BCF0EE821B011292000BF8B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCF0EE5B1B011292000BF8B8 /* Project object */;
+}
