@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCF0EE621B011292000BF8B8"
+               BlueprintIdentifier = "BC33BDE91B02408E00D4ACA0"
                BuildableName = "yubibar.app"
                BlueprintName = "yubibar"
                ReferencedContainer = "container:yubibar.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCF0EE721B011292000BF8B8"
+               BlueprintIdentifier = "BC33BDFC1B02408F00D4ACA0"
                BuildableName = "yubibarTests.xctest"
                BlueprintName = "yubibarTests"
                ReferencedContainer = "container:yubibar.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCF0EE721B011292000BF8B8"
+               BlueprintIdentifier = "BC33BDFC1B02408F00D4ACA0"
                BuildableName = "yubibarTests.xctest"
                BlueprintName = "yubibarTests"
                ReferencedContainer = "container:yubibar.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCF0EE621B011292000BF8B8"
+            BlueprintIdentifier = "BC33BDE91B02408E00D4ACA0"
             BuildableName = "yubibar.app"
             BlueprintName = "yubibar"
             ReferencedContainer = "container:yubibar.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCF0EE621B011292000BF8B8"
+            BlueprintIdentifier = "BC33BDE91B02408E00D4ACA0"
             BuildableName = "yubibar.app"
             BlueprintName = "yubibar"
             ReferencedContainer = "container:yubibar.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCF0EE621B011292000BF8B8"
+            BlueprintIdentifier = "BC33BDE91B02408E00D4ACA0"
             BuildableName = "yubibar.app"
             BlueprintName = "yubibar"
             ReferencedContainer = "container:yubibar.xcodeproj">

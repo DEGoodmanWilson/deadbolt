@@ -7,39 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BCF0EE691B011292000BF8B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF0EE681B011292000BF8B8 /* AppDelegate.swift */; };
-		BCF0EE6B1B011292000BF8B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF0EE6A1B011292000BF8B8 /* Images.xcassets */; };
-		BCF0EE6E1B011292000BF8B8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF0EE6C1B011292000BF8B8 /* MainMenu.xib */; };
+		BC33BDF11B02408E00D4ACA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33BDF01B02408E00D4ACA0 /* AppDelegate.m */; };
+		BC33BDF31B02408E00D4ACA0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33BDF21B02408E00D4ACA0 /* main.m */; };
+		BC33BDF51B02408E00D4ACA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC33BDF41B02408E00D4ACA0 /* Images.xcassets */; };
+		BC33BDF81B02408E00D4ACA0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC33BDF61B02408E00D4ACA0 /* MainMenu.xib */; };
+		BC33BE111B0243A800D4ACA0 /* YBStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33BE101B0243A800D4ACA0 /* YBStatusItemView.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		BCF0EE741B011292000BF8B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BCF0EE5B1B011292000BF8B8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BCF0EE621B011292000BF8B8;
-			remoteInfo = yubibar;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		BCF0EE631B011292000BF8B8 /* yubibar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yubibar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCF0EE671B011292000BF8B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCF0EE681B011292000BF8B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BCF0EE6A1B011292000BF8B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BCF0EE6D1B011292000BF8B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		BCF0EE731B011292000BF8B8 /* yubibarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yubibarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC33BDEA1B02408E00D4ACA0 /* yubibar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yubibar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC33BDEE1B02408E00D4ACA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC33BDEF1B02408E00D4ACA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BC33BDF01B02408E00D4ACA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BC33BDF21B02408E00D4ACA0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC33BDF41B02408E00D4ACA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BC33BDF71B02408E00D4ACA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BC33BE0F1B0243A800D4ACA0 /* YBStatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBStatusItemView.h; sourceTree = "<group>"; };
+		BC33BE101B0243A800D4ACA0 /* YBStatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBStatusItemView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BCF0EE601B011292000BF8B8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BCF0EE701B011292000BF8B8 /* Frameworks */ = {
+		BC33BDE71B02408E00D4ACA0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,38 +37,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BCF0EE5A1B011292000BF8B8 = {
+		BC33BDE11B02408E00D4ACA0 = {
 			isa = PBXGroup;
 			children = (
-				BCF0EE651B011292000BF8B8 /* yubibar */,
-				BCF0EE641B011292000BF8B8 /* Products */,
+				BC33BDEC1B02408E00D4ACA0 /* yubibar */,
+				BC33BDEB1B02408E00D4ACA0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BCF0EE641B011292000BF8B8 /* Products */ = {
+		BC33BDEB1B02408E00D4ACA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BCF0EE631B011292000BF8B8 /* yubibar.app */,
-				BCF0EE731B011292000BF8B8 /* yubibarTests.xctest */,
+				BC33BDEA1B02408E00D4ACA0 /* yubibar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BCF0EE651B011292000BF8B8 /* yubibar */ = {
+		BC33BDEC1B02408E00D4ACA0 /* yubibar */ = {
 			isa = PBXGroup;
 			children = (
-				BCF0EE681B011292000BF8B8 /* AppDelegate.swift */,
-				BCF0EE6A1B011292000BF8B8 /* Images.xcassets */,
-				BCF0EE6C1B011292000BF8B8 /* MainMenu.xib */,
-				BCF0EE661B011292000BF8B8 /* Supporting Files */,
+				BC33BDEF1B02408E00D4ACA0 /* AppDelegate.h */,
+				BC33BDF01B02408E00D4ACA0 /* AppDelegate.m */,
+				BC33BDF41B02408E00D4ACA0 /* Images.xcassets */,
+				BC33BDF61B02408E00D4ACA0 /* MainMenu.xib */,
+				BC33BDED1B02408E00D4ACA0 /* Supporting Files */,
+				BC33BE0F1B0243A800D4ACA0 /* YBStatusItemView.h */,
+				BC33BE101B0243A800D4ACA0 /* YBStatusItemView.m */,
 			);
 			path = yubibar;
 			sourceTree = "<group>";
 		};
-		BCF0EE661B011292000BF8B8 /* Supporting Files */ = {
+		BC33BDED1B02408E00D4ACA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BCF0EE671B011292000BF8B8 /* Info.plist */,
+				BC33BDEE1B02408E00D4ACA0 /* Info.plist */,
+				BC33BDF21B02408E00D4ACA0 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -88,13 +79,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BCF0EE621B011292000BF8B8 /* yubibar */ = {
+		BC33BDE91B02408E00D4ACA0 /* yubibar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BCF0EE7D1B011292000BF8B8 /* Build configuration list for PBXNativeTarget "yubibar" */;
+			buildConfigurationList = BC33BE071B02408F00D4ACA0 /* Build configuration list for PBXNativeTarget "yubibar" */;
 			buildPhases = (
-				BCF0EE5F1B011292000BF8B8 /* Sources */,
-				BCF0EE601B011292000BF8B8 /* Frameworks */,
-				BCF0EE611B011292000BF8B8 /* Resources */,
+				BC33BDE61B02408E00D4ACA0 /* Sources */,
+				BC33BDE71B02408E00D4ACA0 /* Frameworks */,
+				BC33BDE81B02408E00D4ACA0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -102,46 +93,24 @@
 			);
 			name = yubibar;
 			productName = yubibar;
-			productReference = BCF0EE631B011292000BF8B8 /* yubibar.app */;
+			productReference = BC33BDEA1B02408E00D4ACA0 /* yubibar.app */;
 			productType = "com.apple.product-type.application";
-		};
-		BCF0EE721B011292000BF8B8 /* yubibarTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BCF0EE801B011292000BF8B8 /* Build configuration list for PBXNativeTarget "yubibarTests" */;
-			buildPhases = (
-				BCF0EE6F1B011292000BF8B8 /* Sources */,
-				BCF0EE701B011292000BF8B8 /* Frameworks */,
-				BCF0EE711B011292000BF8B8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BCF0EE751B011292000BF8B8 /* PBXTargetDependency */,
-			);
-			name = yubibarTests;
-			productName = yubibarTests;
-			productReference = BCF0EE731B011292000BF8B8 /* yubibarTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BCF0EE5B1B011292000BF8B8 /* Project object */ = {
+		BC33BDE21B02408E00D4ACA0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "D.E. Goodman-Wilson";
 				TargetAttributes = {
-					BCF0EE621B011292000BF8B8 = {
+					BC33BDE91B02408E00D4ACA0 = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					BCF0EE721B011292000BF8B8 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = BCF0EE621B011292000BF8B8;
 					};
 				};
 			};
-			buildConfigurationList = BCF0EE5E1B011292000BF8B8 /* Build configuration list for PBXProject "yubibar" */;
+			buildConfigurationList = BC33BDE51B02408E00D4ACA0 /* Build configuration list for PBXProject "yubibar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -149,67 +118,46 @@
 				en,
 				Base,
 			);
-			mainGroup = BCF0EE5A1B011292000BF8B8;
-			productRefGroup = BCF0EE641B011292000BF8B8 /* Products */;
+			mainGroup = BC33BDE11B02408E00D4ACA0;
+			productRefGroup = BC33BDEB1B02408E00D4ACA0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BCF0EE621B011292000BF8B8 /* yubibar */,
-				BCF0EE721B011292000BF8B8 /* yubibarTests */,
+				BC33BDE91B02408E00D4ACA0 /* yubibar */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BCF0EE611B011292000BF8B8 /* Resources */ = {
+		BC33BDE81B02408E00D4ACA0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCF0EE6B1B011292000BF8B8 /* Images.xcassets in Resources */,
-				BCF0EE6E1B011292000BF8B8 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BCF0EE711B011292000BF8B8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				BC33BDF51B02408E00D4ACA0 /* Images.xcassets in Resources */,
+				BC33BDF81B02408E00D4ACA0 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BCF0EE5F1B011292000BF8B8 /* Sources */ = {
+		BC33BDE61B02408E00D4ACA0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCF0EE691B011292000BF8B8 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BCF0EE6F1B011292000BF8B8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				BC33BDF31B02408E00D4ACA0 /* main.m in Sources */,
+				BC33BE111B0243A800D4ACA0 /* YBStatusItemView.m in Sources */,
+				BC33BDF11B02408E00D4ACA0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		BCF0EE751B011292000BF8B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BCF0EE621B011292000BF8B8 /* yubibar */;
-			targetProxy = BCF0EE741B011292000BF8B8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		BCF0EE6C1B011292000BF8B8 /* MainMenu.xib */ = {
+		BC33BDF61B02408E00D4ACA0 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BCF0EE6D1B011292000BF8B8 /* Base */,
+				BC33BDF71B02408E00D4ACA0 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -217,7 +165,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BCF0EE7B1B011292000BF8B8 /* Debug */ = {
+		BC33BE051B02408F00D4ACA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -257,11 +205,10 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		BCF0EE7C1B011292000BF8B8 /* Release */ = {
+		BC33BE061B02408F00D4ACA0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -297,95 +244,52 @@
 			};
 			name = Release;
 		};
-		BCF0EE7E1B011292000BF8B8 /* Debug */ = {
+		BC33BE081B02408F00D4ACA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = yubibar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		BCF0EE7F1B011292000BF8B8 /* Release */ = {
+		BC33BE091B02408F00D4ACA0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = yubibar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		BCF0EE811B011292000BF8B8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = yubibarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yubibar.app/Contents/MacOS/yubibar";
-			};
-			name = Debug;
-		};
-		BCF0EE821B011292000BF8B8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = yubibarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yubibar.app/Contents/MacOS/yubibar";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BCF0EE5E1B011292000BF8B8 /* Build configuration list for PBXProject "yubibar" */ = {
+		BC33BDE51B02408E00D4ACA0 /* Build configuration list for PBXProject "yubibar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BCF0EE7B1B011292000BF8B8 /* Debug */,
-				BCF0EE7C1B011292000BF8B8 /* Release */,
+				BC33BE051B02408F00D4ACA0 /* Debug */,
+				BC33BE061B02408F00D4ACA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BCF0EE7D1B011292000BF8B8 /* Build configuration list for PBXNativeTarget "yubibar" */ = {
+		BC33BE071B02408F00D4ACA0 /* Build configuration list for PBXNativeTarget "yubibar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BCF0EE7E1B011292000BF8B8 /* Debug */,
-				BCF0EE7F1B011292000BF8B8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BCF0EE801B011292000BF8B8 /* Build configuration list for PBXNativeTarget "yubibarTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BCF0EE811B011292000BF8B8 /* Debug */,
-				BCF0EE821B011292000BF8B8 /* Release */,
+				BC33BE081B02408F00D4ACA0 /* Debug */,
+				BC33BE091B02408F00D4ACA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BCF0EE5B1B011292000BF8B8 /* Project object */;
+	rootObject = BC33BDE21B02408E00D4ACA0 /* Project object */;
 }

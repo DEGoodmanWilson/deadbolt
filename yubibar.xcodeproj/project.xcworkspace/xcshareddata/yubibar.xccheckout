@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5FE218BD-D4CD-4C3D-BF3D-5EC5FC9FB0CF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>yubibar</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>24022476E605D0C8593BE0E7FE79C7698DC53ADE</key>
+		<string>github.com:DEGoodmanWilson/yubibar.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>yubibar.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>24022476E605D0C8593BE0E7FE79C7698DC53ADE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:DEGoodmanWilson/yubibar.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>24022476E605D0C8593BE0E7FE79C7698DC53ADE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>24022476E605D0C8593BE0E7FE79C7698DC53ADE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>yubibar</string>
+		</dict>
+	</array>
+</dict>
+</plist>
