@@ -7,21 +7,21 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>6CAB3EAC-575D-465C-9721-D33C6EBCBCAD</string>
 	<key>IDESourceControlProjectName</key>
-	<string>deadbolt</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>24022476E605D0C8593BE0E7FE79C7698DC53ADE</key>
-		<string>github.com:DEGoodmanWilson/deadbolt.git</string>
+		<string>github.com:DEGoodmanWilson/yubibar.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>deadbolt.xcodeproj</string>
+	<string>deadbolt.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>24022476E605D0C8593BE0E7FE79C7698DC53ADE</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:DEGoodmanWilson/deadbolt.git</string>
+	<string>github.com:DEGoodmanWilson/yubibar.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>24022476E605D0C8593BE0E7FE79C7698DC53ADE</string>
 			<key>IDESourceControlWCCName</key>
-			<string>deadbolt</string>
+			<string>yubibar</string>
 		</dict>
 	</array>
 </dict>

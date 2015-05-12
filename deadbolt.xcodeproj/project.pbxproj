@@ -13,6 +13,7 @@
 		BC33BDF81B02408E00D4ACA0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC33BDF61B02408E00D4ACA0 /* MainMenu.xib */; };
 		BC33BE111B0243A800D4ACA0 /* DBStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33BE101B0243A800D4ACA0 /* DBStatusItemView.m */; };
 		BC3BF88C1B025AE900D57253 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC3BF88B1B025AE900D57253 /* IOKit.framework */; };
+		BCE30AF21B025D95007B8959 /* login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE30AF11B025D95007B8959 /* login.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BC33BE0F1B0243A800D4ACA0 /* DBStatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStatusItemView.h; sourceTree = "<group>"; };
 		BC33BE101B0243A800D4ACA0 /* DBStatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStatusItemView.m; sourceTree = "<group>"; };
 		BC3BF88B1B025AE900D57253 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		BCE30AF11B025D95007B8959 /* login.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = login.framework; path = ../../../../../System/Library/PrivateFrameworks/login.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE30AF21B025D95007B8959 /* login.framework in Frameworks */,
 				BC3BF88C1B025AE900D57253 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +46,7 @@
 		BC33BDE11B02408E00D4ACA0 = {
 			isa = PBXGroup;
 			children = (
+				BCE30AF11B025D95007B8959 /* login.framework */,
 				BC3BF88B1B025AE900D57253 /* IOKit.framework */,
 				BC33BDEC1B02408E00D4ACA0 /* deadbolt */,
 				BC33BDEB1B02408E00D4ACA0 /* Products */,
@@ -253,6 +257,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = deadbolt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -265,6 +273,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = deadbolt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
