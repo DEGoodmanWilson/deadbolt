@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="usbDevicePopUpButton" destination="Xfm-IN-P4b" id="5P6-gx-KCb"/>
                 <outlet property="window" destination="s3D-Pd-CI5" id="cus-Sc-Dat"/>
             </connections>
         </customObject>
@@ -668,32 +669,46 @@
             </items>
         </menu>
         <customView id="HXK-0N-fBY">
-            <rect key="frame" x="0.0" y="0.0" width="328" height="261"/>
+            <rect key="frame" x="0.0" y="-5" width="328" height="127"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yJO-WZ-olW">
-                    <rect key="frame" x="18" y="225" width="61" height="18"/>
-                    <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="VC5-ah-LDk">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xfm-IN-P4b">
+                    <rect key="frame" x="115" y="83" width="196" height="26"/>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Azj-Yh-udi" id="zyA-IN-n7J">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="PUn-FN-jki">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="Azj-Yh-udi"/>
+                                <menuItem title="Item 2" id="N5Q-fs-pt6"/>
+                                <menuItem title="Item 3" id="LRn-lw-Jxf"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="usbPopUpButtonClicked:" target="Voe-Tx-rLC" id="9M0-4f-G60"/>
+                    </connections>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-EP-8X2">
+                    <rect key="frame" x="18" y="90" width="97" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="USB device:" id="UdD-L5-PjX">
                         <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6s-tj-PKI">
+                    <rect key="frame" x="123" y="19" width="82" height="19"/>
+                    <buttonCell key="cell" type="recessed" title="deadbolt" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f4S-2i-XuH">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="systemBold" size="12"/>
                     </buttonCell>
-                </button>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bie-be-yrZ">
-                    <rect key="frame" x="18" y="205" width="61" height="18"/>
-                    <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="GwN-l1-fq3">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lU2-ar-eKa">
-                    <rect key="frame" x="14" y="154" width="82" height="32"/>
-                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3R5-h3-Q8X">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
+                    <connections>
+                        <action selector="linkButtonClicked:" target="Voe-Tx-rLC" id="Nuk-td-fOs"/>
+                    </connections>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="258" y="389.5"/>
+            <point key="canvasLocation" x="258" y="322.5"/>
         </customView>
         <viewController id="jZv-jT-5cn" userLabel="Popover View Controller">
             <connections>

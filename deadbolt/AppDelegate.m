@@ -15,9 +15,10 @@
 
 @interface AppDelegate ()
 
-@property (strong) NSStatusItem         *statusBarItem;
-@property (strong) DBStatusItemView     *icon;
-@property (strong) IBOutlet NSPopover            *window;
+@property (strong)              NSStatusItem         *statusBarItem;
+@property (strong)              DBStatusItemView     *icon;
+@property (strong)  IBOutlet    NSPopover           *window;
+@property (strong)  IBOutlet    NSPopUpButton       *usbDevicePopUpButton;
 
 @end
 
@@ -51,13 +52,15 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHighlightNotification:) name:@"setHighlight" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHighlightNotification:) name:@"unsetHighlight" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:NSApplicationWillResignActiveNotification object:nil];
-
+    
+    [self populateUSBlist];
 }
 
 - (void) handleHighlightNotification:(NSNotification *)notification
 {
     if([notification.name isEqualToString:@"setHighlight"])
     {
+        [self populateUSBlist];
         [NSApp activateIgnoringOtherApps:YES];
         [self.window showRelativeToRect:self.icon.frame ofView:self.icon preferredEdge:NSMinYEdge];
     }
@@ -160,5 +163,21 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
+
+#pragma mark - IBActions
+
+- (void) populateUSBlist
+{
+    //todo
+}
+
+- (IBAction)usbPopUpButtonClicked:(id)sender {
+    ;
+}
+
+- (IBAction)linkButtonClicked:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/DEGoodmanWilson/deadbolt"]];
+}
+
 
 @end
