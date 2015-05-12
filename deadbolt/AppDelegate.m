@@ -262,7 +262,7 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
     //now see if we should insert our stored device in list
     NSString *defaultDeviceName = [[NSUserDefaults standardUserDefaults] stringForKey:@"USBName"];
     
-    if( (![defaultDeviceName isEqualToString:@""]) && (self.usbDevices[defaultDeviceName] == nil) )
+    if( (![defaultDeviceName isEqualToString:@""]) && (deviceDict[defaultDeviceName] == nil) )
     {
         //we have a default value stored. Add it to the list only if it doesn't exist
         deviceDict[defaultDeviceName] = @{
