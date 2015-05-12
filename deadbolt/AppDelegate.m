@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import "DBStatusItemView.h"
+#import <IOKit/IOKitLib.h>
+#import <IOKit/IOCFPlugIn.h>
+#import <IOKit/usb/IOUSBLib.h>
+#import <IOKit/usb/USBSpec.h>
 
 @interface AppDelegate ()
 
@@ -16,6 +20,18 @@
 @property (strong) IBOutlet NSPopover            *window;
 
 @end
+
+#define     matchVendorID           0x1050
+#define     matchProductID          0x0114
+
+void usbDeviceAppeared(void *refCon, io_iterator_t iterator){
+    NSLog(@"Matching USB device appeared");
+    while (IOIteratorNext(iterator)) {};
+}
+void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
+    NSLog(@"Matching USB device disappeared");
+    while (IOIteratorNext(iterator)) {};
+}
 
 @implementation AppDelegate
 
@@ -55,7 +71,87 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    io_iterator_t newDevicesIterator;
+    io_iterator_t lostDevicesIterator;
+    
+    newDevicesIterator = 0;
+    lostDevicesIterator = 0;
+    NSLog(@" ");
+    
+    NSMutableDictionary *matchingDict = (__bridge NSMutableDictionary *)IOServiceMatching(kIOUSBDeviceClassName);
+    
+    if (matchingDict == nil){
+        NSLog(@"Could not create matching dictionary");
+        return;
+    }
+    [matchingDict setObject:[NSNumber numberWithShort:matchVendorID] forKey:(NSString *)CFSTR(kUSBVendorID)];
+    [matchingDict setObject:[NSNumber numberWithShort:matchProductID] forKey:(NSString *)CFSTR(kUSBProductID)];
+    
+    //  Add notification ports to runloop
+    IONotificationPortRef notificationPort = IONotificationPortCreate(kIOMasterPortDefault);
+    CFRunLoopSourceRef notificationRunLoopSource = IONotificationPortGetRunLoopSource(notificationPort);
+    CFRunLoopAddSource([[NSRunLoop currentRunLoop] getCFRunLoop], notificationRunLoopSource, kCFRunLoopDefaultMode);
+    
+    kern_return_t err;
+    err = IOServiceAddMatchingNotification(notificationPort,
+                                           kIOMatchedNotification,
+                                           (__bridge CFDictionaryRef)matchingDict,
+                                           usbDeviceAppeared,
+                                           (__bridge void *)self,
+                                           &newDevicesIterator);
+    if (err)
+    {
+        NSLog(@"error adding publish notification");
+    }
+    [self matchingDevicesAdded: newDevicesIterator];
+    
+    
+    NSMutableDictionary *matchingDictRemoved = (__bridge NSMutableDictionary *)IOServiceMatching(kIOUSBDeviceClassName);
+    
+    if (matchingDictRemoved == nil){
+        NSLog(@"Could not create matching dictionary");
+        return;
+    }
+    [matchingDictRemoved setObject:[NSNumber numberWithShort:matchVendorID] forKey:(NSString *)CFSTR(kUSBVendorID)];
+    [matchingDictRemoved setObject:[NSNumber numberWithShort:matchProductID] forKey:(NSString *)CFSTR(kUSBProductID)];
+    
+    
+    err = IOServiceAddMatchingNotification(notificationPort,
+                                           kIOTerminatedNotification,
+                                           (__bridge CFDictionaryRef)matchingDictRemoved,
+                                           usbDeviceDisappeared,
+                                           (__bridge void *)self,
+                                           &lostDevicesIterator);
+    if (err)
+    {
+        NSLog(@"error adding removed notification");
+    }
+    [self matchingDevicesRemoved: lostDevicesIterator];
+    
+    
+    //      CFRunLoopRun();
+    //      [[NSRunLoop currentRunLoop] run];
+}
+
+- (void)matchingDevicesAdded:(io_iterator_t)devices
+{
+    io_object_t thisObject;
+    while ( (thisObject = IOIteratorNext(devices))) {
+        NSLog(@"new Matching device added ");
+        IOObjectRelease(thisObject);
+    }
+    
+}
+
+
+- (void)matchingDevicesRemoved:(io_iterator_t)devices
+{
+    io_object_t thisObject;
+    while ( (thisObject = IOIteratorNext(devices))) {
+        NSLog(@"A matching device was removed ");
+        IOObjectRelease(thisObject);
+    }
+    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
