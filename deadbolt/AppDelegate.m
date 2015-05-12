@@ -19,6 +19,7 @@
 @property (strong)              DBStatusItemView     *icon;
 @property (strong)  IBOutlet    NSPopover           *window;
 @property (strong)  IBOutlet    NSPopUpButton       *usbDevicePopUpButton;
+@property (strong)              NSDictionary        *usbDevices;
 
 @end
 
@@ -77,8 +78,8 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // initial defaults
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
-                                                              @"USBVendorID": [NSNumber numberWithLong:0x0000],
-                                                              @"USBProductID": [NSNumber numberWithLong:0x0000],
+                                                              @kUSBVendorID: [NSNumber numberWithLong:0x0000],
+                                                              @kUSBProductID: [NSNumber numberWithLong:0x0000],
                                                               @"USBName": @"",
                                                               }];
     
@@ -171,16 +172,133 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
     // Insert code here to tear down your application
 }
 
-#pragma mark - IBActions
+#pragma mark - USB goodies
+
+- (NSDictionary *) getListOfSystemDevices
+{
+    //first, get the list of USB devices from the system
+    CFMutableDictionaryRef matchingDict;
+    io_iterator_t iter;
+    kern_return_t kr;
+    io_service_t device;
+    
+    /* set up a matching dictionary for the class */
+    matchingDict = IOServiceMatching(kIOUSBDeviceClassName);    // Interested in instances of class
+    // IOUSBDevice and its subclasses
+    if (matchingDict == NULL) {
+        return @{};
+    }
+    
+    // We are interested in all USB devices (as opposed to USB interfaces).  The Common Class Specification
+    // tells us that we need to specify the idVendor, idProduct, and bcdDevice fields, or, if we're not interested
+    // in particular bcdDevices, just the idVendor and idProduct.  Note that if we were trying to match an
+    // IOUSBInterface, we would need to set more values in the matching dictionary (e.g. idVendor, idProduct,
+    // bInterfaceNumber and bConfigurationValue.
+    
+    //search for all vendors
+    CFDictionarySetValue(matchingDict, CFSTR(kUSBVendorID), CFSTR("*"));
+    CFDictionarySetValue(matchingDict, CFSTR (kUSBProductID), CFSTR("*"));
+    
+    /* Now we have a dictionary, get an iterator.*/
+    kr = IOServiceGetMatchingServices(kIOMasterPortDefault, matchingDict, &iter);
+    if (kr != KERN_SUCCESS)
+    {
+        return @{};
+    }
+    
+    /* iterate */
+    NSMutableDictionary *devices = [NSMutableDictionary new];
+    while ((device = IOIteratorNext(iter)))
+    {
+        io_name_t       deviceName;
+        
+        //make sure this isn't a hub
+        CFTypeRef bDeviceClass = IORegistryEntryCreateCFProperty(device, CFSTR(kUSBDeviceClass), kCFAllocatorDefault, 0);
+        uint32_t devClass;
+        CFNumberGetValue(bDeviceClass, kCFNumberIntType, &devClass);
+        if(devClass == kUSBHubClass)
+        {
+            continue;
+        }
+        
+        /* do something with device, eg. check properties */
+        /* ... */
+        /* And free the reference taken before continuing to the next item */
+        
+        // Get the USB device's name.
+        kr = IORegistryEntryGetName(device, deviceName);
+        if (KERN_SUCCESS != kr) {
+            deviceName[0] = '\0';
+        }
+        
+        CFTypeRef deviceVendorID;
+        deviceVendorID = IORegistryEntryCreateCFProperty(device, CFSTR(kUSBVendorID), kCFAllocatorDefault, 0);
+        CFTypeRef deviceProductID;
+        deviceProductID = IORegistryEntryCreateCFProperty(device, CFSTR(kUSBProductID), kCFAllocatorDefault, 0);
+        
+        uint32_t vendorId, productId;
+        CFNumberGetValue(deviceVendorID, kCFNumberIntType, &vendorId);
+        CFNumberGetValue(deviceProductID, kCFNumberIntType, &productId);
+        
+        devices[[NSString stringWithUTF8String:deviceName ]] = @{
+                            @kUSBVendorID: [NSNumber numberWithLong:vendorId],
+                            @kUSBProductID: [NSNumber numberWithLong:productId],
+                            };
+        
+        IOObjectRelease(device);
+        CFRelease(deviceVendorID);
+        CFRelease(deviceProductID);
+    }
+    
+    /* Done, release the iterator */
+    IOObjectRelease(iter);
+    
+    return devices;
+}
 
 - (void) populateUSBlist
 {
-    //todo
-    NSMutableDictionary *
+    NSMutableDictionary *deviceDict = [NSMutableDictionary dictionaryWithDictionary:[self getListOfSystemDevices]];
+    //now see if we should insert our stored device in list
+    NSString *defaultDeviceName = [[NSUserDefaults standardUserDefaults] stringForKey:@"USBName"];
+    
+    if( (![defaultDeviceName isEqualToString:@""]) && (self.usbDevices[defaultDeviceName] == nil) )
+    {
+        //we have a default value stored. Add it to the list only if it doesn't exist
+        deviceDict[defaultDeviceName] = @{
+               @kUSBVendorID: [NSNumber numberWithLong:[[NSUserDefaults standardUserDefaults] integerForKey:@kUSBVendorID]],
+                @kUSBProductID: [NSNumber numberWithLong:[[NSUserDefaults standardUserDefaults] integerForKey:@kUSBProductID]],
+             };
+    }
+    
+    self.usbDevices = [NSDictionary dictionaryWithDictionary:deviceDict];
+    
+    //now, get this into the popup
+    [self.usbDevicePopUpButton removeAllItems];
+    for (NSString *key in [self.usbDevices allKeys])
+    {
+        if([defaultDeviceName isEqualToString:key])
+        {
+            [self.usbDevicePopUpButton insertItemWithTitle:key atIndex:0];
+            [self.usbDevicePopUpButton selectItemAtIndex:0];
+        }
+        else
+        {
+            [self.usbDevicePopUpButton addItemWithTitle:key];
+        }
+    }
 }
 
+#pragma mark - IBActions
+
 - (IBAction)usbPopUpButtonClicked:(id)sender {
-    ;
+    //get the selected item and
+    //  a) watch for it
+    //  b) store in defaults
+    NSDictionary *device = self.usbDevices[self.usbDevicePopUpButton.selectedItem.title];
+    [[NSUserDefaults standardUserDefaults] setObject:self.usbDevicePopUpButton.selectedItem.title forKey:@"USBName"];
+    [[NSUserDefaults standardUserDefaults] setObject:device[@kUSBVendorID] forKey:@kUSBVendorID];
+    [[NSUserDefaults standardUserDefaults] setObject:device[@kUSBProductID] forKey:@kUSBProductID];
 }
 
 - (IBAction)linkButtonClicked:(id)sender {
