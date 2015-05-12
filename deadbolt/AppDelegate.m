@@ -20,18 +20,13 @@
 @property (strong)  IBOutlet    NSPopover           *window;
 @property (strong)  IBOutlet    NSPopUpButton       *usbDevicePopUpButton;
 @property (strong)              NSDictionary        *usbDevices;
+@property (assign)              io_iterator_t       deviceIterator;
+
 
 @end
 
-#define     matchVendorID           0x1050
-#define     matchProductID          0x0114
-
 extern void SACLockScreenImmediate ( );
 
-void usbDeviceAppeared(void *refCon, io_iterator_t iterator){
-    NSLog(@"Matching USB device appeared");
-    while (IOIteratorNext(iterator)) {};
-}
 void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
     NSLog(@"Matching USB device disappeared");
     while (IOIteratorNext(iterator)) {};
@@ -84,67 +79,7 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
                                                               }];
     
     [self populateUSBlist];
-    
-    io_iterator_t newDevicesIterator;
-    io_iterator_t lostDevicesIterator;
-    
-    newDevicesIterator = 0;
-    lostDevicesIterator = 0;
-    NSLog(@" ");
-    
-    NSMutableDictionary *matchingDict = (__bridge NSMutableDictionary *)IOServiceMatching(kIOUSBDeviceClassName);
-    
-    if (matchingDict == nil){
-        NSLog(@"Could not create matching dictionary");
-        return;
-    }
-    [matchingDict setObject:[NSNumber numberWithShort:matchVendorID] forKey:(NSString *)CFSTR(kUSBVendorID)];
-    [matchingDict setObject:[NSNumber numberWithShort:matchProductID] forKey:(NSString *)CFSTR(kUSBProductID)];
-    
-    //  Add notification ports to runloop
-    IONotificationPortRef notificationPort = IONotificationPortCreate(kIOMasterPortDefault);
-    CFRunLoopSourceRef notificationRunLoopSource = IONotificationPortGetRunLoopSource(notificationPort);
-    CFRunLoopAddSource([[NSRunLoop currentRunLoop] getCFRunLoop], notificationRunLoopSource, kCFRunLoopDefaultMode);
-    
-    kern_return_t err;
-    err = IOServiceAddMatchingNotification(notificationPort,
-                                           kIOMatchedNotification,
-                                           (__bridge CFDictionaryRef)matchingDict,
-                                           usbDeviceAppeared,
-                                           (__bridge void *)self,
-                                           &newDevicesIterator);
-    if (err)
-    {
-        NSLog(@"error adding publish notification");
-    }
-    [self matchingDevicesAdded: newDevicesIterator];
-    
-    
-    NSMutableDictionary *matchingDictRemoved = (__bridge NSMutableDictionary *)IOServiceMatching(kIOUSBDeviceClassName);
-    
-    if (matchingDictRemoved == nil){
-        NSLog(@"Could not create matching dictionary");
-        return;
-    }
-    [matchingDictRemoved setObject:[NSNumber numberWithShort:matchVendorID] forKey:(NSString *)CFSTR(kUSBVendorID)];
-    [matchingDictRemoved setObject:[NSNumber numberWithShort:matchProductID] forKey:(NSString *)CFSTR(kUSBProductID)];
-    
-    
-    err = IOServiceAddMatchingNotification(notificationPort,
-                                           kIOTerminatedNotification,
-                                           (__bridge CFDictionaryRef)matchingDictRemoved,
-                                           usbDeviceDisappeared,
-                                           (__bridge void *)self,
-                                           &lostDevicesIterator);
-    if (err)
-    {
-        NSLog(@"error adding removed notification");
-    }
-    [self matchingDevicesRemoved: lostDevicesIterator];
-    
-    
-    //      CFRunLoopRun();
-    //      [[NSRunLoop currentRunLoop] run];
+    [self watchUSBDevice];
 }
 
 - (void)matchingDevicesAdded:(io_iterator_t)devices
@@ -289,6 +224,49 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
     }
 }
 
+- (void)watchUSBDevice
+{
+    IOObjectRelease(self.deviceIterator); //remove all previous notifications
+    
+    if([[[NSUserDefaults standardUserDefaults] stringForKey:@"USBName"] isEqualToString:@""])
+    {
+        return;
+    }
+
+    io_iterator_t lostDevicesIterator;
+    
+    NSMutableDictionary *matchingDict = (__bridge NSMutableDictionary *)IOServiceMatching(kIOUSBDeviceClassName);
+    
+    if (matchingDict == nil){
+        NSLog(@"Could not create matching dictionary");
+        return;
+    }
+    [matchingDict setObject:[NSNumber numberWithInteger:[[NSUserDefaults standardUserDefaults] integerForKey:@kUSBVendorID]] forKey:(NSString *)CFSTR(kUSBVendorID)];
+     
+    [matchingDict setObject:[NSNumber numberWithShort:[[NSUserDefaults standardUserDefaults] integerForKey:@kUSBProductID]] forKey:(NSString *)CFSTR(kUSBProductID)];
+    
+    //  Add notification ports to runloop
+    IONotificationPortRef notificationPort = IONotificationPortCreate(kIOMasterPortDefault);
+    CFRunLoopSourceRef notificationRunLoopSource = IONotificationPortGetRunLoopSource(notificationPort);
+    CFRunLoopAddSource([[NSRunLoop currentRunLoop] getCFRunLoop], notificationRunLoopSource, kCFRunLoopDefaultMode);
+    
+    kern_return_t err;
+    err = IOServiceAddMatchingNotification(notificationPort,
+                                           kIOTerminatedNotification,
+                                           (__bridge CFDictionaryRef)matchingDict,
+                                           usbDeviceDisappeared,
+                                           (__bridge void *)self,
+                                           &lostDevicesIterator);
+    if (err)
+    {
+        NSLog(@"error adding removal notification");
+    }
+
+    self.deviceIterator = lostDevicesIterator;
+    
+    [self matchingDevicesRemoved: lostDevicesIterator];
+}
+
 #pragma mark - IBActions
 
 - (IBAction)usbPopUpButtonClicked:(id)sender {
@@ -299,6 +277,8 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
     [[NSUserDefaults standardUserDefaults] setObject:self.usbDevicePopUpButton.selectedItem.title forKey:@"USBName"];
     [[NSUserDefaults standardUserDefaults] setObject:device[@kUSBVendorID] forKey:@kUSBVendorID];
     [[NSUserDefaults standardUserDefaults] setObject:device[@kUSBProductID] forKey:@kUSBProductID];
+    
+    [self watchUSBDevice];
 }
 
 - (IBAction)linkButtonClicked:(id)sender {
