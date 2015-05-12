@@ -52,8 +52,6 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHighlightNotification:) name:@"setHighlight" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHighlightNotification:) name:@"unsetHighlight" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:NSApplicationWillResignActiveNotification object:nil];
-    
-    [self populateUSBlist];
 }
 
 - (void) handleHighlightNotification:(NSNotification *)notification
@@ -77,6 +75,15 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    // initial defaults
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{
+                                                              @"USBVendorID": [NSNumber numberWithLong:0x0000],
+                                                              @"USBProductID": [NSNumber numberWithLong:0x0000],
+                                                              @"USBName": @"",
+                                                              }];
+    
+    [self populateUSBlist];
+    
     io_iterator_t newDevicesIterator;
     io_iterator_t lostDevicesIterator;
     
@@ -169,6 +176,7 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
 - (void) populateUSBlist
 {
     //todo
+    NSMutableDictionary *
 }
 
 - (IBAction)usbPopUpButtonClicked:(id)sender {
