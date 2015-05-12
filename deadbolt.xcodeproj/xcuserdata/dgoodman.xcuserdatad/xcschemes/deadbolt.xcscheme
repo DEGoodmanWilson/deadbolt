@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC33BDE91B02408E00D4ACA0"
-               BuildableName = "yubibar.app"
-               BlueprintName = "yubibar"
-               ReferencedContainer = "container:yubibar.xcodeproj">
+               BuildableName = "deadbolt.app"
+               BlueprintName = "deadbolt"
+               ReferencedContainer = "container:deadbolt.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC33BDFC1B02408F00D4ACA0"
-               BuildableName = "yubibarTests.xctest"
-               BlueprintName = "yubibarTests"
-               ReferencedContainer = "container:yubibar.xcodeproj">
+               BuildableName = "deadboltTests.xctest"
+               BlueprintName = "deadboltTests"
+               ReferencedContainer = "container:deadbolt.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC33BDFC1B02408F00D4ACA0"
-               BuildableName = "yubibarTests.xctest"
-               BlueprintName = "yubibarTests"
-               ReferencedContainer = "container:yubibar.xcodeproj">
+               BuildableName = "deadboltTests.xctest"
+               BlueprintName = "deadboltTests"
+               ReferencedContainer = "container:deadbolt.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC33BDE91B02408E00D4ACA0"
-            BuildableName = "yubibar.app"
-            BlueprintName = "yubibar"
-            ReferencedContainer = "container:yubibar.xcodeproj">
+            BuildableName = "deadbolt.app"
+            BlueprintName = "deadbolt"
+            ReferencedContainer = "container:deadbolt.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC33BDE91B02408E00D4ACA0"
-            BuildableName = "yubibar.app"
-            BlueprintName = "yubibar"
-            ReferencedContainer = "container:yubibar.xcodeproj">
+            BuildableName = "deadbolt.app"
+            BlueprintName = "deadbolt"
+            ReferencedContainer = "container:deadbolt.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC33BDE91B02408E00D4ACA0"
-            BuildableName = "yubibar.app"
-            BlueprintName = "yubibar"
-            ReferencedContainer = "container:yubibar.xcodeproj">
+            BuildableName = "deadbolt.app"
+            BlueprintName = "deadbolt"
+            ReferencedContainer = "container:deadbolt.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

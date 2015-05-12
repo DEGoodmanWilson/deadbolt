@@ -7,12 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "YBStatusItemView.h"
+#import "DBStatusItemView.h"
 
 @interface AppDelegate ()
 
 @property (strong) NSStatusItem         *statusBarItem;
-@property (strong) YBStatusItemView     *icon;
+@property (strong) DBStatusItemView     *icon;
 @property (strong) IBOutlet NSPopover            *window;
 
 @end
@@ -23,7 +23,7 @@
 {
     //Add statusBarItem
     self.statusBarItem = [[NSStatusBar systemStatusBar] statusItemWithLength:-1];
-    self.icon = [[YBStatusItemView alloc] initWithImage:[NSImage imageNamed:@"statusbaricon"] delegate:self.statusBarItem];
+    self.icon = [[DBStatusItemView alloc] initWithImage:[NSImage imageNamed:@"statusbaricon"] delegate:self.statusBarItem];
     self.statusBarItem.view = self.icon;
     
     //Suppress display of icon in dock.

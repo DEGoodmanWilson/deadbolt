@@ -1,21 +1,21 @@
 //
-//  YBStatusItemView.m
+//  DBStatusItemView.m
 //  yubibar
 //
 //  Created by D.E. Goodman-Wilson on 05/12/15.
 //  Copyright (c) 2015 D.E. Goodman-Wilson. All rights reserved.
 //
 
-#import "YBStatusItemView.h"
+#import "DBStatusItemView.h"
 
-@interface YBStatusItemView ()
+@interface DBStatusItemView ()
 
 @property   (strong)            NSImage         *image;
 @property   (weak)              NSStatusItem    *delegate;
 @property   (nonatomic, assign) BOOL            isSelected;
 @end
 
-@implementation YBStatusItemView
+@implementation DBStatusItemView
 
 - (id) initWithImage:(NSImage *)image delegate:(NSStatusItem *)delegate
 {

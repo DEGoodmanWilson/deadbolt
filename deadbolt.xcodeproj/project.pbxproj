@@ -11,19 +11,19 @@
 		BC33BDF31B02408E00D4ACA0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33BDF21B02408E00D4ACA0 /* main.m */; };
 		BC33BDF51B02408E00D4ACA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC33BDF41B02408E00D4ACA0 /* Images.xcassets */; };
 		BC33BDF81B02408E00D4ACA0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC33BDF61B02408E00D4ACA0 /* MainMenu.xib */; };
-		BC33BE111B0243A800D4ACA0 /* YBStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33BE101B0243A800D4ACA0 /* YBStatusItemView.m */; };
+		BC33BE111B0243A800D4ACA0 /* DBStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33BE101B0243A800D4ACA0 /* DBStatusItemView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC33BDEA1B02408E00D4ACA0 /* yubibar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yubibar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC33BDEA1B02408E00D4ACA0 /* deadbolt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deadbolt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC33BDEE1B02408E00D4ACA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC33BDEF1B02408E00D4ACA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC33BDF01B02408E00D4ACA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BC33BDF21B02408E00D4ACA0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC33BDF41B02408E00D4ACA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BC33BDF71B02408E00D4ACA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		BC33BE0F1B0243A800D4ACA0 /* YBStatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBStatusItemView.h; sourceTree = "<group>"; };
-		BC33BE101B0243A800D4ACA0 /* YBStatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBStatusItemView.m; sourceTree = "<group>"; };
+		BC33BE0F1B0243A800D4ACA0 /* DBStatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStatusItemView.h; sourceTree = "<group>"; };
+		BC33BE101B0243A800D4ACA0 /* DBStatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStatusItemView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,7 @@
 		BC33BDE11B02408E00D4ACA0 = {
 			isa = PBXGroup;
 			children = (
-				BC33BDEC1B02408E00D4ACA0 /* yubibar */,
+				BC33BDEC1B02408E00D4ACA0 /* deadbolt */,
 				BC33BDEB1B02408E00D4ACA0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		BC33BDEB1B02408E00D4ACA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC33BDEA1B02408E00D4ACA0 /* yubibar.app */,
+				BC33BDEA1B02408E00D4ACA0 /* deadbolt.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BC33BDEC1B02408E00D4ACA0 /* yubibar */ = {
+		BC33BDEC1B02408E00D4ACA0 /* deadbolt */ = {
 			isa = PBXGroup;
 			children = (
 				BC33BDEF1B02408E00D4ACA0 /* AppDelegate.h */,
@@ -61,10 +61,10 @@
 				BC33BDF41B02408E00D4ACA0 /* Images.xcassets */,
 				BC33BDF61B02408E00D4ACA0 /* MainMenu.xib */,
 				BC33BDED1B02408E00D4ACA0 /* Supporting Files */,
-				BC33BE0F1B0243A800D4ACA0 /* YBStatusItemView.h */,
-				BC33BE101B0243A800D4ACA0 /* YBStatusItemView.m */,
+				BC33BE0F1B0243A800D4ACA0 /* DBStatusItemView.h */,
+				BC33BE101B0243A800D4ACA0 /* DBStatusItemView.m */,
 			);
-			path = yubibar;
+			path = deadbolt;
 			sourceTree = "<group>";
 		};
 		BC33BDED1B02408E00D4ACA0 /* Supporting Files */ = {
@@ -79,9 +79,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC33BDE91B02408E00D4ACA0 /* yubibar */ = {
+		BC33BDE91B02408E00D4ACA0 /* deadbolt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC33BE071B02408F00D4ACA0 /* Build configuration list for PBXNativeTarget "yubibar" */;
+			buildConfigurationList = BC33BE071B02408F00D4ACA0 /* Build configuration list for PBXNativeTarget "deadbolt" */;
 			buildPhases = (
 				BC33BDE61B02408E00D4ACA0 /* Sources */,
 				BC33BDE71B02408E00D4ACA0 /* Frameworks */,
@@ -91,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = yubibar;
-			productName = yubibar;
-			productReference = BC33BDEA1B02408E00D4ACA0 /* yubibar.app */;
+			name = deadbolt;
+			productName = deadbolt;
+			productReference = BC33BDEA1B02408E00D4ACA0 /* deadbolt.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +110,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BC33BDE51B02408E00D4ACA0 /* Build configuration list for PBXProject "yubibar" */;
+			buildConfigurationList = BC33BDE51B02408E00D4ACA0 /* Build configuration list for PBXProject "deadbolt" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -123,7 +123,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC33BDE91B02408E00D4ACA0 /* yubibar */,
+				BC33BDE91B02408E00D4ACA0 /* deadbolt */,
 			);
 		};
 /* End PBXProject section */
@@ -146,7 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC33BDF31B02408E00D4ACA0 /* main.m in Sources */,
-				BC33BE111B0243A800D4ACA0 /* YBStatusItemView.m in Sources */,
+				BC33BE111B0243A800D4ACA0 /* DBStatusItemView.m in Sources */,
 				BC33BDF11B02408E00D4ACA0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,7 +201,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -238,7 +238,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -249,7 +249,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = yubibar/Info.plist;
+				INFOPLIST_FILE = deadbolt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -261,7 +261,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = yubibar/Info.plist;
+				INFOPLIST_FILE = deadbolt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -271,7 +271,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC33BDE51B02408E00D4ACA0 /* Build configuration list for PBXProject "yubibar" */ = {
+		BC33BDE51B02408E00D4ACA0 /* Build configuration list for PBXProject "deadbolt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC33BE051B02408F00D4ACA0 /* Debug */,
@@ -280,7 +280,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC33BE071B02408F00D4ACA0 /* Build configuration list for PBXNativeTarget "yubibar" */ = {
+		BC33BE071B02408F00D4ACA0 /* Build configuration list for PBXNativeTarget "deadbolt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC33BE081B02408F00D4ACA0 /* Debug */,

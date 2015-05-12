@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface YBStatusItemView : NSView
+@interface DBStatusItemView : NSView
 
 - (id) initWithImage:(NSImage *)image delegate:(NSStatusItem *)delegate;
 

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:yubibar.xcodeproj">
+      location = "self:deadbolt.xcodeproj">
    </FileRef>
 </Workspace>
