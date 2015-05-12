@@ -72,6 +72,15 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // initial defaults
+    // Add the app to the LoginItems list.
+    LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+    if (loginItemsRef != nil)
+    {
+        CFURLRef appUrl = (__bridge CFURLRef)[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+        LSSharedFileListItemRef itemRef = LSSharedFileListInsertItemURL(loginItemsRef, kLSSharedFileListItemLast, NULL, NULL, appUrl, NULL, NULL);
+        if (itemRef) CFRelease(itemRef);
+    }
+    
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
                                                               @kUSBVendorID: [NSNumber numberWithLong:0x0000],
                                                               @kUSBProductID: [NSNumber numberWithLong:0x0000],
