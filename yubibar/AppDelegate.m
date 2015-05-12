@@ -29,8 +29,9 @@
     //Suppress display of icon in dock.
     [NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHighlightNotification:) name:@"setHighight" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHighlightNotification:) name:@"unsetHighight" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHighlightNotification:) name:@"setHighlight" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHighlightNotification:) name:@"unsetHighlight" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:NSApplicationWillResignActiveNotification object:nil];
 
 }
 
@@ -38,8 +39,18 @@
 {
     if([notification.name isEqualToString:@"setHighlight"])
     {
+        [NSApp activateIgnoringOtherApps:YES];
         [self.window showRelativeToRect:self.icon.frame ofView:self.icon preferredEdge:NSMinYEdge];
     }
+    else if([notification.name isEqualToString:@"unsetHighlight"])
+    {
+        [self.window performClose:self];
+    }
+}
+
+- (void)applicationWillResignActive:(NSNotification *)notification
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"unsetHighlight" object:self];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {

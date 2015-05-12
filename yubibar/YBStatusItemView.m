@@ -29,6 +29,10 @@
         NSRect rect = NSMakeRect(0.0, 0.0, self.image.size.width+4, thickness);
         
         self.frame = rect;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHighlightNotification:) name:@"setHighlight" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleHighlightNotification:) name:@"unsetHighlight" object:nil];
+
     }
     
     return self;
@@ -41,6 +45,20 @@
     [self.image drawInRect:rect];
 }
 
+- (void) handleHighlightNotification:(NSNotification *)notification
+{
+    if([notification.name isEqualToString:@"setHighlight"])
+    {
+        self.isSelected = YES;
+    }
+    else if([notification.name isEqualToString:@"unsetHighlight"])
+    {
+        self.isSelected = NO;
+    }
+    
+    self.needsDisplay = YES;
+}
+
 - (void) mouseDown:(NSEvent *)theEvent
 {
     if(self.isSelected)
@@ -51,7 +69,6 @@
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"setHighlight" object:self];
     }
-    self.isSelected = !self.isSelected;
 }
 
 @end
