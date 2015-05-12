@@ -24,6 +24,8 @@
 #define     matchVendorID           0x1050
 #define     matchProductID          0x0114
 
+extern void SACLockScreenImmediate ( );
+
 void usbDeviceAppeared(void *refCon, io_iterator_t iterator){
     NSLog(@"Matching USB device appeared");
     while (IOIteratorNext(iterator)) {};
@@ -31,6 +33,7 @@ void usbDeviceAppeared(void *refCon, io_iterator_t iterator){
 void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
     NSLog(@"Matching USB device disappeared");
     while (IOIteratorNext(iterator)) {};
+    SACLockScreenImmediate();
 }
 
 @implementation AppDelegate
