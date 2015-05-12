@@ -50,6 +50,7 @@
 
 - (void)applicationWillResignActive:(NSNotification *)notification
 {
+//    NSLog(@"applicationWillResignActive");
     [[NSNotificationCenter defaultCenter] postNotificationName:@"unsetHighlight" object:self];
 }
 

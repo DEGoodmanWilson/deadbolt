@@ -700,7 +700,7 @@
                 <outlet property="view" destination="HXK-0N-fBY" id="fgP-Ud-KXa"/>
             </connections>
         </viewController>
-        <popover behavior="t" id="s3D-Pd-CI5">
+        <popover id="s3D-Pd-CI5">
             <connections>
                 <outlet property="contentViewController" destination="jZv-jT-5cn" id="pge-La-8Zs"/>
             </connections>

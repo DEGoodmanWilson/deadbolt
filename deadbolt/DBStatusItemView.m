@@ -49,10 +49,12 @@
 {
     if([notification.name isEqualToString:@"setHighlight"])
     {
+//        NSLog(@"setHighlight");
         self.isSelected = YES;
     }
     else if([notification.name isEqualToString:@"unsetHighlight"])
     {
+//        NSLog(@"unsetHighlight");
         self.isSelected = NO;
     }
     
@@ -61,6 +63,7 @@
 
 - (void) mouseDown:(NSEvent *)theEvent
 {
+//    NSLog(@"mouseDown");
     if(self.isSelected)
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"unsetHighlight" object:self];
