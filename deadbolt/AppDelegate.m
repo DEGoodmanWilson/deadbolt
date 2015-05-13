@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import "DBStatusItemView.h"
+#import <MASShortcut/MASShortcut.h>
+#import <MASShortcut/MASShortcutBinder.h>
+#import <MASShortcut/MASShortcutView.h>
+#import <MASShortcut/MASShortcutView+Bindings.h>
 #import <IOKit/IOKitLib.h>
 #import <IOKit/IOCFPlugIn.h>
 #import <IOKit/usb/IOUSBLib.h>
@@ -21,7 +25,7 @@
 @property (strong)  IBOutlet    NSPopUpButton       *usbDevicePopUpButton;
 @property (strong)              NSDictionary        *usbDevices;
 @property (assign)              io_iterator_t       deviceIterator;
-
+@property (strong)  IBOutlet    MASShortcutView     *shortcutView;
 
 @end
 
@@ -72,6 +76,7 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // initial defaults
+    
     // Add the app to the LoginItems list.
     LSSharedFileListRef loginItemsRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
     if (loginItemsRef != nil)
@@ -81,11 +86,23 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
         if (itemRef) CFRelease(itemRef);
     }
     
+    //user defaults
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
                                                               @kUSBVendorID: [NSNumber numberWithLong:0x0000],
                                                               @kUSBProductID: [NSNumber numberWithLong:0x0000],
                                                               @"USBName": @"",
                                                               }];
+    //global shotcut goodies
+    [self.shortcutView setAssociatedUserDefaultsKey:@"HotKey"];
+    
+    //lock: ctrl+alt+cmd+l
+    NSEventModifierFlags lockKeyMask = NSAlternateKeyMask | NSControlKeyMask | NSCommandKeyMask;
+    MASShortcut *defaultLockShortcut = [[MASShortcut alloc] initWithKeyCode:kVK_ANSI_L modifierFlags:lockKeyMask];
+    [[MASShortcutBinder sharedBinder] registerDefaultShortcuts:@{@"HotKey": defaultLockShortcut}];
+
+    [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:@"HotKey" toAction:^{
+        SACLockScreenImmediate();
+    }];
     
     [self populateUSBlist];
     [self watchUSBDevice];
