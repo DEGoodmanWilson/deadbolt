@@ -10,23 +10,25 @@
 
 @interface DBStatusItemView ()
 
-@property   (strong)            NSImage         *image;
+@property   (strong)            NSImage         *lightImage;
+@property   (strong)            NSImage         *darkImage;
 @property   (weak)              NSStatusItem    *delegate;
 @property   (nonatomic, assign) BOOL            isSelected;
 @end
 
 @implementation DBStatusItemView
 
-- (id) initWithImage:(NSImage *)image delegate:(NSStatusItem *)delegate
+- (id) initWithLightImage:(NSImage *)lightImage darkImage:(NSImage *)darkImage delegate:(NSStatusItem *)delegate
 {
     if(self = [super  init])
     {
-        self.image = image;
+        self.lightImage = lightImage;
+        self.darkImage = darkImage;
         self.delegate = delegate;
         self.isSelected = false;
         
         CGFloat thickness = [NSStatusBar systemStatusBar].thickness;
-        NSRect rect = NSMakeRect(0.0, 0.0, self.image.size.width+4, thickness);
+        NSRect rect = NSMakeRect(0.0, 0.0, self.lightImage.size.width+4, thickness);
         
         self.frame = rect;
         
@@ -38,11 +40,21 @@
     return self;
 }
 
+- (BOOL)isYosemiteDarkTheme
+{
+    return [[[NSAppearance currentAppearance] name] isEqualTo:@"NSAppearanceNameVibrantDark"];
+}
+
 - (void) drawRect:(NSRect)dirtyRect
 {
     [self.delegate drawStatusBarBackgroundInRect:dirtyRect withHighlight:self.isSelected];
-    NSRect rect = NSMakeRect(2.0, 2.0, self.image.size.width, self.image.size.height);
-    [self.image drawInRect:rect];
+    
+    NSImage *image = self.lightImage;
+    
+    if([self isYosemiteDarkTheme]) image = self.darkImage;
+    
+    NSRect rect = NSMakeRect(2.0, 2.0, image.size.width, image.size.height);
+    [image drawInRect:rect];
 }
 
 - (void) handleHighlightNotification:(NSNotification *)notification

@@ -10,6 +10,6 @@
 
 @interface DBStatusItemView : NSView
 
-- (id) initWithImage:(NSImage *)image delegate:(NSStatusItem *)delegate;
+- (id) initWithLightImage:(NSImage *)lightImage darkImage:(NSImage *)darkImage delegate:(NSStatusItem *)delegate;
 
 @end

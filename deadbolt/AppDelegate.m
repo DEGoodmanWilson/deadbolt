@@ -43,7 +43,7 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
 {
     //Add statusBarItem
     self.statusBarItem = [[NSStatusBar systemStatusBar] statusItemWithLength:-1];
-    self.icon = [[DBStatusItemView alloc] initWithImage:[NSImage imageNamed:@"statusbaricon"] delegate:self.statusBarItem];
+    self.icon = [[DBStatusItemView alloc] initWithLightImage:[NSImage imageNamed:@"statusbaricon"] darkImage:[NSImage imageNamed:@"statusbaricon-white"] delegate:self.statusBarItem];
     self.statusBarItem.view = self.icon;
     
     //Suppress display of icon in dock.
