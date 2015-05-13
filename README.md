@@ -27,15 +27,19 @@ You should have received a copy of the GNU General Public License along with thi
 ## FAQ
 
 * Do I need a Yubikey for `deadbolt` to be of use?
+
 No, in fact you don’t. `deadbolt` can monitor any USB device of your choosing, and lock your computer on removal. But `deadbolt` is most useful when you have some kind of cryptographic hardware that enables 2FA for unlocking the computer.
 
 * Why isn’t there an app icon?
+
 Because I am no artist. @pavelmacek has kindly offered to make one—wait for it!
 
 * What license is the source code released under?
+
 GPL v3.0.
 
 * Seriously? Why would you do such a thing?
+
 Because Richard Stallman was right.
 
 ## Downloads
