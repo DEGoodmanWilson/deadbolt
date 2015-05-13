@@ -1,4 +1,0 @@
-http://www.markosx.com/thecocoaquest/nspopover-not-closing-behaviour-when-entering-mission-control-or-launchpad/
-http://www.markosx.com/thecocoaquest/epiphany-for-fixing-nspopover/
-http://stackoverflow.com/questions/7837439/how-do-i-make-a-menubar-application-with-a-nspopover
-http://stackoverflow.com/questions/16488222/notifications-from-mac-os-on-usb-device-addition-removal
