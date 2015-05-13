@@ -44,7 +44,7 @@ Because Richard Stallman was right.
 
 ## Downloads
 You can download pre-built binaries here:
-* [1.0.0](https://github.com/DEGoodmanWilson/deadbolt/blob/master/Releases/deadbolt-1.0.0.app.zip)
+* [1.0.0](https://github.com/DEGoodmanWilson/deadbolt/raw/master/Releases/deadbolt-1.0.0.zip)
 
 ## Credits
 ### MASShortcut
