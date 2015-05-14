@@ -14,6 +14,12 @@ But the PAM module isn’t sufficient alone. The PAM module allows you to set th
 
 `deadbolt` provides the *only when*—`deadbolt` monitors when your Yubikey (or any other USB device of your choosing, for that matter) is removed, and immediately locks your computer. So now, not only do you need your Yubikey to unlock your computer, it must remain in place to even use your computer. No Yubikey, no access.
 
+## Roadmap
+
+* Require user authentication to change preferences.
+
+* Save user prefs in Keychain, which is encrypted and not available for just anyone who has access to an account to change.
+
 ## License
 
 `deadbolt` Copyright © 2015 D.E. Goodman-Wilson.
