@@ -4,7 +4,13 @@ Transform your Yubikey into a literal key to your Mac.
 
 ## What is it?
 
-[Yubikeys](https://www.yubico.com/products/yubikey-hardware/) are great little devices for 2FA and other crypto applications. With just a little tweaking—and `deadbolt`—you can turn your Yubikey into a physical key for your Mac.
+In the most basic terms, `deadbolt` locks your Mac when you remove a specified USB device—any USB device.
+
+## Why would I want to use it?
+
+One simple use-case is to lock your computer when you walk away from it. Since you (let us say) habitually charge your iPhone from your Mac, and always bring your iPhone when you walk away, you can set `deadbolt` to lock your Mac automatically when you do that.
+
+Here is a more sophisticated and interesting use-case. [Yubikeys](https://www.yubico.com/products/yubikey-hardware/) are great little devices for 2FA and other crypto applications. With just a little tweaking—and `deadbolt`—you can turn your Yubikey into a physical key for your Mac.
 
 The use case is simple: You want your Mac to operate *when* and *only when* your Yubikey is present.
 
