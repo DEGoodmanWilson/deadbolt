@@ -11,17 +11,21 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>24022476E605D0C8593BE0E7FE79C7698DC53ADE</key>
-		<string>github.com:DEGoodmanWilson/deadbolt.git</string>
+		<string>github.com:DEGoodmanWilson/yubibar.git</string>
+		<key>BB3C4AE3EC7E6771B5CB3DC143FB7B67396AE556</key>
+		<string>github.com:shpakovski/MASShortcut.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>deadbolt.xcodeproj</string>
+	<string>deadbolt.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>24022476E605D0C8593BE0E7FE79C7698DC53ADE</key>
-		<string>../..</string>
+		<string>..</string>
+		<key>BB3C4AE3EC7E6771B5CB3DC143FB7B67396AE556</key>
+		<string>..MASShortcut/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:DEGoodmanWilson/deadbolt.git</string>
+	<string>github.com:DEGoodmanWilson/yubibar.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -35,6 +39,14 @@
 			<string>24022476E605D0C8593BE0E7FE79C7698DC53ADE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>deadbolt</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BB3C4AE3EC7E6771B5CB3DC143FB7B67396AE556</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MASShortcut</string>
 		</dict>
 	</array>
 </dict>

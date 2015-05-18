@@ -129,6 +129,20 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
     
 }
 
+- (NSApplicationTerminateReply) applicationShouldTerminate:(NSApplication *)sender
+{
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert addButtonWithTitle:@"OK"];
+    [alert addButtonWithTitle:@"Cancel"];
+    [alert setMessageText:@"Quit deadbolt?"];
+    [alert setInformativeText:[NSString stringWithFormat:@"If you quit, removing %@ will no longer lock your Mac.", [[NSUserDefaults standardUserDefaults] stringForKey:@"USBName"]]];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    if ([alert runModal] == NSAlertFirstButtonReturn) {
+        return NSTerminateNow;
+    }
+    return NSTerminateCancel;
+}
+
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
