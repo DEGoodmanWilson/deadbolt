@@ -61,6 +61,9 @@ You can download pre-built binaries here:
 * [1.0.0](https://github.com/DEGoodmanWilson/deadbolt/raw/master/Releases/deadbolt-1.0.0.zip)
   * First release
 
+## Love
+Like what you see? [I accept tips!](http://degoodmanwilson.tip.me/)
+
 ## Credits
 ### MASShortcut
 
