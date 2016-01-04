@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -14,6 +14,8 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="lockDisplayButton" destination="pMq-I5-Kcr" id="4rQ-j2-Vn7"/>
+                <outlet property="screensaverButton" destination="fgv-KD-JVM" id="7iy-vX-M5r"/>
                 <outlet property="shortcutView" destination="lO0-Jp-sFM" id="6IB-is-OHl"/>
                 <outlet property="usbDevicePopUpButton" destination="Xfm-IN-P4b" id="5P6-gx-KCb"/>
                 <outlet property="window" destination="s3D-Pd-CI5" id="cus-Sc-Dat"/>
@@ -670,11 +672,11 @@
             </items>
         </menu>
         <customView id="HXK-0N-fBY">
-            <rect key="frame" x="0.0" y="-5" width="328" height="127"/>
+            <rect key="frame" x="0.0" y="0.0" width="328" height="167"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xfm-IN-P4b">
-                    <rect key="frame" x="115" y="83" width="196" height="26"/>
+                    <rect key="frame" x="115" y="123" width="196" height="26"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Azj-Yh-udi" id="zyA-IN-n7J">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -691,7 +693,7 @@
                     </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-EP-8X2">
-                    <rect key="frame" x="18" y="90" width="97" height="17"/>
+                    <rect key="frame" x="18" y="130" width="97" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="USB device:" id="UdD-L5-PjX">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -699,13 +701,36 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iam-jd-ycV">
-                    <rect key="frame" x="18" y="65" width="97" height="17"/>
+                    <rect key="frame" x="18" y="105" width="97" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Lock shortcut:" id="6WM-nT-8MY">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lO0-Jp-sFM" customClass="MASShortcutView">
+                    <rect key="frame" x="117" y="103" width="191" height="19"/>
+                </customView>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMq-I5-Kcr">
+                    <rect key="frame" x="73" y="78" width="183" height="18"/>
+                    <buttonCell key="cell" type="radio" title="Lock display" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="l6M-vx-HJp">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="lockTypeChanged:" target="Voe-Tx-rLC" id="peT-sr-YX9"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgv-KD-JVM">
+                    <rect key="frame" x="73" y="56" width="183" height="18"/>
+                    <buttonCell key="cell" type="radio" title="Launch screensaver" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="CXe-Ph-Vzd">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="lockTypeChanged:" target="Voe-Tx-rLC" id="sWE-25-yDa"/>
+                    </connections>
+                </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6s-tj-PKI">
                     <rect key="frame" x="123" y="19" width="82" height="19"/>
                     <buttonCell key="cell" type="recessed" title="deadbolt" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f4S-2i-XuH">
@@ -716,11 +741,8 @@
                         <action selector="linkButtonClicked:" target="Voe-Tx-rLC" id="Nuk-td-fOs"/>
                     </connections>
                 </button>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lO0-Jp-sFM" customClass="MASShortcutView">
-                    <rect key="frame" x="117" y="63" width="191" height="19"/>
-                </customView>
             </subviews>
-            <point key="canvasLocation" x="258" y="322.5"/>
+            <point key="canvasLocation" x="258" y="342.5"/>
         </customView>
         <viewController id="jZv-jT-5cn" userLabel="Popover View Controller">
             <connections>

@@ -26,7 +26,8 @@
 @property (strong)              NSDictionary        *usbDevices;
 @property (assign)              io_iterator_t       deviceIterator;
 @property (strong)  IBOutlet    MASShortcutView     *shortcutView;
-
+@property (strong)  IBOutlet    NSButton            *lockDisplayButton;
+@property (strong)  IBOutlet    NSButton            *screensaverButton;
 @end
 
 extern void SACLockScreenImmediate ( );
@@ -34,7 +35,14 @@ extern void SACLockScreenImmediate ( );
 void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
     NSLog(@"Matching USB device disappeared");
     while (IOIteratorNext(iterator)) {};
-    SACLockScreenImmediate();
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"UseScreenSaver"])
+    {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:@"/System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"]];
+    }
+    else
+    {
+        SACLockScreenImmediate();
+    }
 }
 
 @implementation AppDelegate
@@ -91,6 +99,7 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
                                                               @kUSBVendorID: [NSNumber numberWithLong:0x0000],
                                                               @kUSBProductID: [NSNumber numberWithLong:0x0000],
                                                               @"USBName": @"",
+                                                              @"UseScreenSaver": [NSNumber numberWithBool:FALSE],
                                                               }];
     //global shotcut goodies
     [self.shortcutView setAssociatedUserDefaultsKey:@"HotKey"];
@@ -262,6 +271,17 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
             [self.usbDevicePopUpButton addItemWithTitle:key];
         }
     }
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"UseScreenSaver"])
+    {
+        [self.lockDisplayButton setState:NSOffState];
+        [self.screensaverButton setState:NSOnState];
+    }
+    else
+    {
+        [self.lockDisplayButton setState:NSOnState];
+        [self.screensaverButton setState:NSOffState];
+    }
 }
 
 - (void)watchUSBDevice
@@ -308,6 +328,16 @@ void usbDeviceDisappeared(void *refCon, io_iterator_t iterator){
 }
 
 #pragma mark - IBActions
+
+- (IBAction)lockTypeChanged:(id)sender {
+    NSButton *button = sender;
+    if(button == self.lockDisplayButton) {
+        [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:@"UseScreenSaver"];
+    }
+    else if(button == self.screensaverButton) {
+        [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"UseScreenSaver"];
+    }
+}
 
 - (IBAction)usbPopUpButtonClicked:(id)sender {
     //get the selected item and

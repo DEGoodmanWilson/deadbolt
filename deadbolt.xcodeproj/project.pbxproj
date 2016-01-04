@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC0170C21B02D96E00B33ABF /* MASShortcut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0170C11B02D96E00B33ABF /* MASShortcut.framework */; };
-		BC0170C31B02D96E00B33ABF /* MASShortcut.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC0170C11B02D96E00B33ABF /* MASShortcut.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BC2C391D1C3AF82A0000B992 /* MASShortcut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C391C1C3AF82A0000B992 /* MASShortcut.framework */; };
+		BC2C391E1C3AF82A0000B992 /* MASShortcut.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C391C1C3AF82A0000B992 /* MASShortcut.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BC33BDF11B02408E00D4ACA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33BDF01B02408E00D4ACA0 /* AppDelegate.m */; };
 		BC33BDF31B02408E00D4ACA0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC33BDF21B02408E00D4ACA0 /* main.m */; };
 		BC33BDF51B02408E00D4ACA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC33BDF41B02408E00D4ACA0 /* Images.xcassets */; };
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BC0170C31B02D96E00B33ABF /* MASShortcut.framework in Embed Frameworks */,
+				BC2C391E1C3AF82A0000B992 /* MASShortcut.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,7 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BC0170C11B02D96E00B33ABF /* MASShortcut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = MASShortcut.framework; path = "/Users/dgoodman/Library/Developer/Xcode/DerivedData/deadbolt-erbjhurwyqqngggbtoqebkwsddqf/Build/Products/Debug/MASShortcut.framework"; sourceTree = "<absolute>"; };
+		BC2C391C1C3AF82A0000B992 /* MASShortcut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = MASShortcut.framework; path = "/Users/dgoodman/Library/Developer/Xcode/DerivedData/deadbolt-hghaesyrkofmhqeifxjrsjftegbv/Build/Products/Debug/MASShortcut.framework"; sourceTree = "<absolute>"; };
 		BC33BDEA1B02408E00D4ACA0 /* deadbolt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deadbolt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC33BDEE1B02408E00D4ACA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC33BDEF1B02408E00D4ACA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC0170C21B02D96E00B33ABF /* MASShortcut.framework in Frameworks */,
+				BC2C391D1C3AF82A0000B992 /* MASShortcut.framework in Frameworks */,
 				BCE30AF21B025D95007B8959 /* login.framework in Frameworks */,
 				BC3BF88C1B025AE900D57253 /* IOKit.framework in Frameworks */,
 			);
@@ -64,7 +64,7 @@
 		BC33BDE11B02408E00D4ACA0 = {
 			isa = PBXGroup;
 			children = (
-				BC0170C11B02D96E00B33ABF /* MASShortcut.framework */,
+				BC2C391C1C3AF82A0000B992 /* MASShortcut.framework */,
 				BCE30AF11B025D95007B8959 /* login.framework */,
 				BC3BF88B1B025AE900D57253 /* IOKit.framework */,
 				BC33BDEC1B02408E00D4ACA0 /* deadbolt */,

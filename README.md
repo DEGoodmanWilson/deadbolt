@@ -56,6 +56,8 @@ Because Richard Stallman was right.
 
 ## Downloads
 You can download pre-built binaries here:
+* [1.0.2](https://github.com/DEGoodmanWilson/deadbolt/raw/master/Releases/deadbolt-1.0.2.zip)
+  * Added option to lock using screensaver
 * [1.0.1](https://github.com/DEGoodmanWilson/deadbolt/raw/master/Releases/deadbolt-1.0.1.zip)
   * Added quit confirmation dialog.
 * [1.0.0](https://github.com/DEGoodmanWilson/deadbolt/raw/master/Releases/deadbolt-1.0.0.zip)
